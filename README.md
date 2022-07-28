@@ -1,2 +1,2 @@
 <h1>Spiral Mountain<h1>
-<p>Game review site built by Michael LoCascio<p>
+<h5>Game review site built by Michael LoCascio<h5>
