@@ -7,7 +7,7 @@ export default function TopBar() {
     <div className="top">
         <div className="topLeft">
           <img src={Logo} alt="Spiral Mountain Logo" className="topLogo"/>
-          <p>Spiral</p><p>-Mountain</p>
+          <p>Spiral-Mountain</p>
           {/* style more later, perhaps stack and blue/red like bk
           logo? or revert to solid white */}
         </div>
