@@ -1,6 +1,6 @@
 import './App.css';
-import TopBar from '../src/topbar/TopBar';
-import Posts from '../src/posts/Posts'
+import TopBar from '../src/components/topbar/TopBar';
+import Posts from '../src/components/posts/Posts'
 
 function App() {
   return (

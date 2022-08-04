@@ -1,6 +1,6 @@
 import React from 'react'
 import "./topbar.css"
-import Logo from "../logos/SingleLogoWhite125px.png"
+import Logo from "../../logos/SingleLogoWhite125px.png"
 
 export default function TopBar() {
   return (
