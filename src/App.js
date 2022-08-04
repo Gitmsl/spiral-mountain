@@ -1,12 +1,12 @@
 import './App.css';
 import TopBar from '../src/components/topbar/TopBar';
-import Posts from '../src/components/posts/Posts'
+import Home from '../src/pages/home/Home'
 
 function App() {
   return (
     <div className="App">
       <TopBar />
-      <Posts />
+      <Home />
     </div>
   );
 }
