@@ -1,14 +1,14 @@
 @font-face {
     font-family: CCComicrazy;
-    src: url(../fonts/CCComicrazy\ Regular.ttf);
+    src: url(../../fonts/CCComicrazy\ Regular.ttf);
 }
 
 @font-face {
     font-family: Lithos Pro;
-    src: url(../fonts/Lithos\ Pro\ Black.ttf);
+    src: url(../../fonts/Lithos\ Pro\ Black.ttf);
 }
 /* desktop first layout until functionality is at a 
-near-complete state */
+near-complete state  */
 
 .top{ 
     width: 100%;
