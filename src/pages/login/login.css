@@ -1,0 +1,98 @@
+.login {
+    height: calc(100vh - 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.202), 
+        rgba(255, 255, 255, 0.123) 
+        ),
+        url("https://images.unsplash.com/photo-1533725254805-d368d21ca5f0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+    background-size: cover;
+}
+
+.loginTitle {
+    font-size: 50px;
+    font-family: Lithos Pro;
+    color: red;
+    -webkit-text-stroke: .5px gold; 
+    white-space: nowrap;
+    text-align: center;
+    background: transparent;
+}
+
+.loginForm {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-indent: 10px;
+    background: transparent;
+}
+
+.loginForm > label {
+    margin: 10px 0;
+}
+
+.loginInput {
+    margin: 5px 20px;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-family: Cccomicrazy;
+    border: none;
+    border-bottom: 3px solid grey;
+    border-radius: 20px;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 10px 0;
+    background: transparent;
+}
+
+.loginButton {
+    flex-grow: 0.3;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: Cccomicrazy;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.loginRegisterButton {
+    flex-grow: 0.3;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgba(255, 255, 255, 0.7);
+    font-family: Cccomicrazy;
+    cursor: pointer;
+    border: none;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+.loginGuestButton {
+    flex-grow: 0.3;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgba(255, 255, 255, 0.7);
+    font-family: Cccomicrazy;
+    cursor: pointer;
+    border: none;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+.buttonContainer > button:hover {
+    color: rgba(255, 255, 255);
+}
+
+.icon {
+    background: transparent;
+    margin-right: 5px;
+}
