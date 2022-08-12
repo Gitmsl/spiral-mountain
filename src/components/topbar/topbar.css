@@ -36,7 +36,7 @@ near-complete state  */
     align-items: center;
     justify-content: center;
     font-family: Lithos Pro;
-    font-size: calc(5px + 2vw);
+    font-size: calc(5px + 2.5vw);
     color: red;
     -webkit-text-stroke: .5px gold; 
     white-space: nowrap;
@@ -76,9 +76,10 @@ correct account and search icons accordingly */
 }
 
 .topListItem {
-    margin-right: 4vw;
-    margin-left: 1.5vw;
-    font-size: 1.5vw;
+    /* margin-right: 4vw; */
+    /* margin-left: 1.5vw; */
+    margin-right: 15px;
+    font-size: calc(5px + 1.2vw);
     /* variable font size w vw, still needs work later for mobile */
     font-weight: 300;
     cursor: pointer;
@@ -87,4 +88,15 @@ correct account and search icons accordingly */
 .linkStyle {
     color: white;
     text-decoration: none;
+}
+
+.topImg {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.searchIcon {
+    margin-right: 20px;
 }

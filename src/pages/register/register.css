@@ -88,7 +88,7 @@
     border-radius: 20px;
 }
 
-.buttonContainer > button:hover {
+.link > button:hover {
     color: rgba(255, 255, 255);
 }
 
