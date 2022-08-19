@@ -7,15 +7,6 @@ const mongoose = require("mongoose");
 
 //START... cd api, npm start
 
-// mongoose.createConnection(process.env.MONGO_URL).asPromise(console.log("Connected to MongoDB!"));
-
-// async function run() {
-//     try{
-// mongoose.createConnection(process.env.MONGO_URL).asPromise(console.log("Connected to MongoDB!"));
-//     } catch (e) {
-//         console.log(e.message)
-//     }}
-
 //MONGODB connect function
 const connectDB = async ()  => {
     try {
