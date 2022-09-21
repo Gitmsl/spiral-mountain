@@ -23,6 +23,12 @@
     cursor: pointer;
 }
 
+.hrLine {
+    width: 70%;
+    text-align: left;
+    margin-left:0;
+}
+
 
 .postCat {
     font-family: CCComicrazy, Helvetica, sans-serif;

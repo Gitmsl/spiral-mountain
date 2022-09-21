@@ -1,15 +1,12 @@
-import SinglePost from "../singlepost/SinglePost"
-import "./posts.css"
+import SinglePost from "../singlepost/SinglePost";
+import "./posts.css";
 
-export default function Posts() {
+export default function Posts({posts}) {
     return (
         <div className="posts">
-            <SinglePost />
-            <SinglePost />
-            <SinglePost />
-            <SinglePost />
-            <SinglePost />
-            <SinglePost />
+            {posts?.map(p=>(
+                <SinglePost post = {p}/>
+            ))}
         </div>
     )
 }

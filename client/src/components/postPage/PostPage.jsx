@@ -1,6 +1,9 @@
+import { useLocation } from 'react-router-dom'
 import './postPage.css'
 
 export default function PostPage() {
+    const location = useLocation()
+    console.log(location.pathname.split("/")[2])
     return (
         <div className="postPage">
             <div className='singlePostWrapper'>
