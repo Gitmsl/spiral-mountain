@@ -2,6 +2,7 @@ import "./home.css"
 import Posts from '../../components/posts/Posts';
 import { useEffect, useState } from "react";
 import axios from "axios";
+// import setupProxy from "../../setupProxy";
 
 // axios.defaults.baseURL = "http://localhost5000/api/"
 
@@ -11,7 +12,7 @@ export default function Home() {
     useEffect(() => {
         const fetchPosts = async () => {
             const res = await axios.get("/posts");
-            setPosts(res.data)
+            console.log(res)
         };
         fetchPosts();
     },[]);
