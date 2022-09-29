@@ -1,9 +1,21 @@
+import axios from "axios";
+import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom'
 import './postPage.css'
 
 export default function PostPage() {
     const location = useLocation()
-    console.log(location.pathname.split("/")[2])
+    const path = location.pathname.split("/")[2];
+    console.log(location)
+    
+    // useEffect(() => {
+    //     const getPost = async () =>  {
+    //         const res = axios.get("/posts/" + path);
+    //         console.log(res)
+    //     };
+    //     getPost();
+    // }, [path]);
+    
     return (
         <div className="postPage">
             <div className='singlePostWrapper'>
