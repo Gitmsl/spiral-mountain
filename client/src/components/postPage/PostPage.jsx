@@ -7,11 +7,11 @@ export default function PostPage() {
     const location = useLocation();
     const path = location.pathname.split("/")[2];
     const [post, setPost] = useState({});
-
+    
     
     useEffect(() => {
         const getPost = async () =>  {
-            const res = await axios.get("/post/" + path);
+            const res = await axios.get("/posts/" + path);
             console.log(res);
             setPost(res.data);
         };
