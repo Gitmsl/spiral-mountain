@@ -96,3 +96,9 @@
     background: transparent;
     margin-right: 5px;
 }
+.registerErrorMessage {
+    text-align: center;
+    color: red;
+    background-color: blue;
+    margin-top: 10px;
+}

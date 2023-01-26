@@ -14,7 +14,7 @@ import Register from './pages/register/Register';
 import ErrorPage from './pages/error/ErrorPage';
 
 function App() {
-  const user = true;
+  const user = false;
   // guest account will render user true
   return (
     <Router>
