@@ -1,0 +1,20 @@
+#errorPage {
+    display: grid;
+    height: 100vh;
+    width: auto;
+    color:white;
+    text-align: center;
+    background-image: url(../../images/molehillMole.jpg);
+
+}
+
+.errorPageTitle {
+    font-size: 180px;
+    background: transparent;
+    margin-top: 75px;
+}
+
+.errorPageText {
+    font-size: 60px;
+    background: transparent;
+}
