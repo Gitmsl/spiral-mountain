@@ -2,17 +2,17 @@ import React from 'react'
 import "./topbar.css"
 import Logo from "../../logos/SingleLogoWhite125px.png"
 import { Link } from 'react-router-dom';
-import Login from '../../pages/login/Login';
+// import Login from '../../pages/login/Login';
+import { useContext } from 'react';
+import { Context } from '../../context/Context';
 
 export default function TopBar() {
-  const user = true; 
+  const { user } = useContext(Context); 
   return (
     <div className="top">
         <div className="topLeft">
           <img src={Logo} alt="Spiral Mountain Logo" className="topLogo"/>
           <p>Spiral-Mountain</p>
-          {/* style more later, perhaps stack and blue/red like bk
-          logo? or revert to solid white */}
         </div>
         <div className="topCenter">
           <ul className="topList">

@@ -12,9 +12,11 @@ import Settings from './pages/settings/Settings'
 import Login from './pages/login/Login';
 import Register from './pages/register/Register';
 import ErrorPage from './pages/error/ErrorPage';
+import { useContext } from 'react';
+import { Context } from './context/Context';
 
 function App() {
-  const user = false;
+  const { user } = useContext(Context);
   // guest account will render user true
   return (
     <Router>
