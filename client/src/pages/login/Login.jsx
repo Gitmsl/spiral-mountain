@@ -1,4 +1,4 @@
-import { useContext, useRef } from 'react';
+import { useContext, useRef, useState } from 'react';
 import { Link } from 'react-router-dom'
 import { Context } from '../../context/Context';
 import axios from 'axios';
@@ -9,11 +9,13 @@ export default function Login() {
     const userReference = useRef();
     const passwordReference = useRef();
     const { dispatch, isFetching} = useContext(Context);
+    const [error, setError] = useState(false);
 
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         dispatch({type:"login_start"});
+        setError(false);
         try{
             const res = await axios.post("/auth/login", {
                 username: userReference.current.value,
@@ -22,6 +24,7 @@ export default function Login() {
             dispatch({type:"login_success", payload:res.data });
         } catch (err) {
             dispatch({type:"login_failure"});
+            setError(true);
             console.log("uh oh, an error occurred with your login attempt, please try again.")
         }
     };
@@ -51,6 +54,7 @@ export default function Login() {
                         <i className="icon fa-solid fa-arrow-right-to-bracket"></i>
                     Login
                 </button>
+                {error && <div className='loginErrorMessage'>Something went wrong, try again</div>}
             </form>
             <div className='buttonContainer'>
                 <button className='loginRegisterButton'>
