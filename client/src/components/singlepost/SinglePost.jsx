@@ -3,6 +3,7 @@ import Posts from '../posts/Posts';
 import './singlepost.css';
 import {Link} from 'react-router-dom';
 
+
 export default function SinglePost({post}) {
 	return (
 		<div className="singlepost">
