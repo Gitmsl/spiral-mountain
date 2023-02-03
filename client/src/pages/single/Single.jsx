@@ -1,10 +1,11 @@
-import "./single.css"
-import PostPage from '../../components/postPage/PostPage'
+import './single.css';
+import React from 'react';
+import PostPage from '../../components/postPage/PostPage';
 
 export default function Single() {
-    return (
-        <div className="single">
-            <PostPage />
-        </div>
-    )
+	return (
+		<div className="single">
+			<PostPage />
+		</div>
+	);
 }
