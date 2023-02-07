@@ -5,7 +5,7 @@ import './posts.css';
 
 Posts.propTypes = {
 	posts: PropTypes.array.isRequired,
-  };
+};
 
 export default function Posts({posts}) {
 	return (
