@@ -5,12 +5,13 @@ import {Link} from 'react-router-dom';
 
 
 export default function SinglePost({post}) {
+	const PUBLICFOLDER = 'http://localhost:5000/images/';
 	return (
 		<div className="singlepost">
 			{ post.photo && (
 				<img 
 					className="postImg"
-					src={post.photo}
+					src={PUBLICFOLDER + post.photo}
 					alt=""
 				/>
 			) || (
