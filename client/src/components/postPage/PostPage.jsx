@@ -21,7 +21,17 @@ export default function PostPage() {
 		getPost();
 	}, [path]);
 
-
+	const handleDelete = async () => {
+		try{
+			await axios.delete(`/posts/${post._id}`, {
+				data:{username:user.username},
+			});
+			console.log('Post successfully deleted');
+			window.location.replace('/');
+		}catch (err) {
+			console.log('Error deleting post');
+		}
+	};
 	return (
 		<div className="postPage">
 			<div className='singlePostWrapper'>
@@ -32,10 +42,10 @@ export default function PostPage() {
 				/>
 				<h1 className='singlePostTitle'>
 					{post.title}
-					{post.username === user.username && (
+					{post.username === user?.username && (
 						<div className='editSinglePost'>
 							<i className="singlePostIcon fa-regular fa-pen-to-square"></i>
-							<i className="singlePostIcon fa-regular fa-trash-can"></i>
+							<i className="singlePostIcon fa-regular fa-trash-can" onClick={handleDelete}></i>
 						</div>
 					)}
 				</h1>
