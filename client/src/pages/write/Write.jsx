@@ -1,12 +1,11 @@
 import './write.css';
-import {React, useState} from 'react';
+import {React, useState, useContext} from 'react';
 import axios from 'axios';
-import { useContext } from 'react';
 import { Context } from '../../context/Context';
 
 export default function Write() {
 	const [title, setTitle] = useState('');
-	const [description, setDescription] = useState('');
+	const [desc, setDesc] = useState('');
 	const [file, setFile] = useState(null);
 	const {user} = useContext(Context);
 	
@@ -15,7 +14,7 @@ export default function Write() {
 		const newPost = {
 			username: user.username,
 			title,
-			description,
+			desc,
 		};
 		if (file) {
 			const data = new FormData();
@@ -26,14 +25,14 @@ export default function Write() {
 			try{
 				await axios.post('/upload', data);
 			}catch(err) {
-				console.log('an error has occurred')
+				console.log('an error has occurred');
 			}
 		}
 		try{
 			const res = await axios.post('/posts', newPost );
 			window.location.replace('/post/' + res.data._id);
 		} catch (err){
-			console.log('error');
+			console.log('error, second try block');
 		}
 	};
 
@@ -70,7 +69,7 @@ export default function Write() {
 						placeholder='Review text goes here...'
 						type="text"
 						className='writeInput writeText'
-						onChange={(e)=>setDescription(e.target.value)}
+						onChange={(e)=>setDesc(e.target.value)}
 					></textarea>
 				</div>
 				<button className='writeSubmit' type='submit'>Publish</button>
