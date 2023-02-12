@@ -95,8 +95,21 @@ correct account and search icons accordingly */
     width: 50px;
     border-radius: 50%;
     object-fit: cover;
+    cursor: pointer;
 }
 
 .searchIcon {
     margin-right: 20px;
+}
+
+.userNameIconContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.usernameText {
+    font-size: 12px;
+    color:white;
+    margin: auto;
+    padding-right: 6px;
 }

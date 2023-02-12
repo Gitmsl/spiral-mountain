@@ -12,6 +12,13 @@ export default function TopBar() {
 	const handleLogout = () =>{
 		dispatch({ type:'logout' });
 	};
+
+	const displayUsername = () => {
+		console.log({username: user.username});
+		return (
+			<p className='usernameText'>{user.username}</p>
+		);
+	};
 	return (
 		<div className="top">
 			<div className="topLeft">
@@ -35,11 +42,15 @@ export default function TopBar() {
 			<div className="topRight">
 				{
 					user ? (
-						<img 
-							className='topImg'
-							src={user.profilePic}
-							alt=''
-						/>
+						<div className='userNameIconContainer'>
+							{displayUsername()}
+							{/* <p className='usernameIcon'>Username goes here</p> */}
+							<img 
+								className='topImg'
+								src={user.profilePic}
+								alt=''
+							/>
+						</div>
 					) : (
 						<ul className='topList'>
 							<li className='topListItem'>
