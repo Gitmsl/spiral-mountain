@@ -1,7 +1,48 @@
 import './settings.css';
-import React from 'react';
+import { React, useContext, useState } from 'react';
+import { Context } from '../../context/Context';
+import axios from 'axios';
 
 export default function Settings() {
+	const [file, setFile] = useState(null);
+	const [username, setUsername] = useState('');
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+	const [success, setSuccess] = useState(false);
+	const PUBLICFOLDER = 'http://localhost:5000/images/';
+	
+	const {user, dispatch} = useContext(Context);
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		dispatch({type:'update_start'});
+		const updatedUser = {
+			userId: user._id,
+			username, 
+			email, 
+			password,
+		};
+		if (file) {
+			const data = new FormData();
+			const filename = Date.now() + file.name;
+			data.append('name', filename);
+			data.append('file', file);
+			updatedUser.profilePic = filename;
+			try{
+				await axios.post('/upload', data);
+			}catch(err) {
+				console.log('an error has occurred');
+			}
+		}
+		try{
+			const res = await axios.put('/users/' + user._id, updatedUser );
+			dispatch({type:'update_success', payload: res.data});
+			setSuccess(true);
+		} catch (err){
+			console.log('error, second try block');
+			dispatch({type:'update_failure'});
+		}
+	};
 	return (
 		<div className='Settings'>
 			<div className='settingsWrapper'>
@@ -13,21 +54,38 @@ export default function Settings() {
 					<label>Profile Picture</label>
 					<div className='settingsProfPic'>
 						<img 
-							src='https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
+							src={ file ? URL.createObjectURL(file) : PUBLICFOLDER + user.profilePic }
 							alt=''
 						/>
 						<label htmlFor='fileInput'>
 							<i className="settingsProfPicIcon fa-solid fa-user"></i>
 						</label>
-						<input type='file' id='fileInput' style={{display:'none'}}></input>
+						<input 
+							type='file' 
+							id='fileInput' 
+							style={{ display: 'none' }} 
+							onChange={(e)=>setFile(e.target.files[0])} 
+						/>
 					</div>
 					<label>Username</label>
-					<input type='text' placeholder='User'></input>
+					<input 
+						type='text' 
+						placeholder={ user.username }
+						onChange={(e)=>setUsername(e.target.value)}
+					/>
 					<label>Email</label>
-					<input type='email' placeholder='User@gmail.com'></input>
+					<input 
+						type='email' 
+						placeholder={ user.email }
+						onChange={(e)=>setEmail(e.target.value)}
+					/>
 					<label>Password</label>
-					<input type='password'></input>
-					<button className='settingsSubmit'>Update</button>
+					<input 
+						type='password'
+						onChange={(e)=>setPassword(e.target.value)}
+					/>
+					<button className='settingsSubmit' onClick={handleSubmit}>Update</button>
+					{success && <span className='settingsSuccessMessage'>Profile has been successfully updated!</span>}
 				</form>
 			</div>
 		</div>
