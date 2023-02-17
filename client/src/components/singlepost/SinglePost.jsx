@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import './singlepost.css';
 import {Link} from 'react-router-dom';
@@ -24,7 +25,7 @@ export default function SinglePost({post}) {
 			<div className="postInfo">
 				<div className="postCategories">{
 					post.categories.map(c=>(
-						<span className="postCat">{c.name}</span>
+						<span className="postCat" key={c.name}>{c.name}</span>
 					))}
 				</div>
 				<Link to ={`/post/${post._id}`}>
