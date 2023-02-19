@@ -35,6 +35,24 @@ const Reducer = (state, action)=>{
 			isFetching:false,
 			error:true,
 		};
+	case 'delete_user_start':
+		return{
+			user:state.user,
+			isFetching:true,
+			error:false,
+		};
+	case 'delete_user_success':
+		return{
+			user:null,
+			isFetching:false,
+			error:false,
+		};
+	case 'delete_user_failure':
+		return{
+			user:state.user,
+			isFetching:false,
+			error:true,
+		};
 	case 'logout':
 		return{
 			user:null,
