@@ -43,12 +43,33 @@ export default function Settings() {
 			dispatch({type:'update_failure'});
 		}
 	};
+
+	const handleDelete = async (e) => {
+		e.preventDefault();
+		dispatch({type:'delete_user_start'});
+		try{
+			await axios.delete('/users/' + `${user._id}`, {
+				method: 'DELETE',
+			});
+			dispatch({type:'delete_user_success'});
+			console.log('User successfully deleted!');
+			// window.location.replace('/'); //maybe? or new page for user delete success?
+			// return(
+			// 	<div><h2>Account and all associated posts successfully deleted.</h2></div>
+			// );
+		}catch (err) {
+			dispatch({type:'delete_user_failure'});
+			console.log('Error deleting user');
+		}
+	};
+
+	console.log('http://localhost:3000/users/' + `${user._id}`);
 	return (
 		<div className='Settings'>
 			<div className='settingsWrapper'>
 				<div className='settingsTitle'>
 					<span className='settingsUpdateTitle'>Update your Account</span>
-					<span className='settingsDeleteTitle'>Delete your Account</span>
+					<button className='settingsDeleteButton' onClick={ handleDelete }>Delete your Account</button>
 				</div>
 				<form className='settingsForm'>
 					<label>Profile Picture</label>
@@ -84,7 +105,7 @@ export default function Settings() {
 						type='password'
 						onChange={(e)=>setPassword(e.target.value)}
 					/>
-					<button className='settingsSubmit' onClick={handleSubmit}>Update</button>
+					<button className='settingsSubmit' onClick={ handleSubmit }>Update</button>
 					{success && <span className='settingsSuccessMessage'>Profile has been successfully updated!</span>}
 				</form>
 			</div>

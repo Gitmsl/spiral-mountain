@@ -30,23 +30,23 @@ router.put("/:id", async (req, res)=>{
 
 //Delete
 router.delete("/:id", async (req, res)=>{
-    if (req.body.userId === req.params.id){
+    // if (req.body.userId === req.params.id){
        try{
             const user = await User.findById(req.params.id);
            try{
                 await Post.deleteMany({username:user.username});
                 //^set to delete all posts associated with user
-               await User.findByIdAndDelete(req.params.id)
+               await User.findByIdAndDelete(req.params.id);
                res.status(200).json("User successfully deleted");
             } catch(err){
                 res.status(500).json(err);
             }
         } catch(err){
-            res.status(404).json("User not found")
+            res.status(404).json("User not found");
         }
-    } else{
-        res.status(401).json("Deletion failed, try again");
-    }
+    // } else{
+    //     res.status(401).json("Deletion failed, try again");
+    // }
 });
 
 //Get user
