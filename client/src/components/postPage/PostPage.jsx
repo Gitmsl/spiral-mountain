@@ -75,7 +75,7 @@ export default function PostPage() {
 			console.log(post.usernameId === user._id);
 		}
 	};
-	console.log(user._id);
+	
 	return (
 		<div className="postPage" >
 			<div className='singlePostWrapper'>

@@ -60,7 +60,6 @@ export default function Login() {
 				<button className='loginRegisterButton'>
 					<Link className='link' to="/register"><i className="icon fa-solid fa-user-plus"></i>Register new account</Link>
 				</button>
-				<button className='loginGuestButton'><i className="icon fa-solid fa-ghost"></i>Login as Guest</button>
 			</div>
 		</div>
 	);
