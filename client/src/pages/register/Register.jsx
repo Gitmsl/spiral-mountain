@@ -58,10 +58,6 @@ export default function Register() {
                         Login
 					</button>
 				</Link>
-				<button className='registerGuestButton'>
-					<i className="icon fa-solid fa-ghost"></i>
-                    Login as Guest
-				</button>
 			</div>
 		</div>
 	);

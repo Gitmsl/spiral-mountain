@@ -77,17 +77,6 @@
     border-radius: 20px;
 }
 
-.registerGuestButton {
-    flex-grow: 0.3;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: rgba(255, 255, 255, 0.7);
-    font-family: Cccomicrazy;
-    cursor: pointer;
-    border: none;
-    padding: 15px;
-    border-radius: 20px;
-}
-
 .link > button:hover {
     color: rgba(255, 255, 255);
 }
