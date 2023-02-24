@@ -36,6 +36,12 @@ export default function Settings() {
 		}
 		try{
 			const res = await axios.put('/users/' + user._id, updatedUser );
+			await axios.put(`/posts/${user._id}`, {
+				username: updatedUser.username
+			});
+			// add line that adds await axios.put ('/posts/'), updates posts tied to user
+			//with updated username?
+			//above should retroactively update usernames of previous posts
 			dispatch({type:'update_success', payload: res.data});
 			setSuccess(true);
 		} catch (err){
@@ -63,7 +69,7 @@ export default function Settings() {
 		}
 	};
 
-	console.log('http://localhost:3000/users/' + `${user._id}`);
+	// console.log('http://localhost:3000/users/' + `${user._id}`);
 	return (
 		<div className='Settings'>
 			<div className='settingsWrapper'>
