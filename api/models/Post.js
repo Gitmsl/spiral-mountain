@@ -19,6 +19,11 @@ const PostSchema = new mongoose.Schema(
         type:String,
         required:true,
     },
+    usernameId:{
+        type:String,
+        required:true,
+        immutable: true, //this value will never change
+    }, //NEW^
     categories:{
         type:Array,
         required:false

@@ -17,21 +17,23 @@ router.post("/", async (req, res)=>{
 router.put("/:id", async (req, res)=>{
     try{
         const post = await Post.findById(req.params.id);
-        if(post.username === req.body.username){
-        
-        try{
-            const updatedPost = await Post.findByIdAndUpdate(req.params.id, {
-                $set:req.body,
-            },
-            { new: true }
-            );
-            res.status(200).json(updatedPost);
-        } catch(err){
-            res.status(500).json(err);
+        if(post.usernameId === req.body.usernameId){
+            //NEW above previously had usernameId as username...
+            //GOAL: usernameId linked to post === current user id#. 
+            try{
+                const updatedPost = await Post.findByIdAndUpdate(req.params.id, {
+                    $set:req.body,
+                },
+                { new: true }
+                );
+                res.status(200).json(updatedPost);
+            } catch(err){
+                res.status(500).json(err);
+                console.log("backend error checks");
+            }
+        } else{
+            res.status(401).json("You can only update your own posts");
         }
-    } else{
-        res.status(401).json("You can only update your own posts");
-    }
     } catch(err){
         res.status(500).json(err);
     }
@@ -41,16 +43,18 @@ router.put("/:id", async (req, res)=>{
 router.delete("/:id", async (req, res)=>{
     try{
         const post = await Post.findById(req.params.id);
-        if(post.username === req.body.username){
-        try{
-            await post.delete()
-            res.status(200).json("Post successfully deleted");
-        } catch(err){
-            res.status(500).json(err);
+        if(post.usernameId === req.body._id){
+            //NEW^ username switched to usernameId, since ID# cannot be updated (only screen name)
+            //may need to change req.body.usernameId to req.body._id
+            try{
+                await post.delete()
+                res.status(200).json("Post successfully deleted");
+            } catch(err){
+                res.status(500).json(err);
+            }
+        } else{
+            res.status(401).json("You can only delete your own posts");
         }
-    } else{
-        res.status(401).json("You can only delete your own posts");
-    }
     } catch(err){
         res.status(500).json(err);
     }
@@ -79,13 +83,13 @@ router.get("/", async (req,res)=>{
                 $in:[catName],
             },
         });
-        } else{
-            posts = await Post.find();
-        }
-        res.status(200).json(posts);
-    } catch (err) {
-        res.status(500).json(err);
+    } else{
+        posts = await Post.find();
     }
+    res.status(200).json(posts);
+} catch (err) {
+    res.status(500).json(err);
+}
 });
 
 module.exports = router

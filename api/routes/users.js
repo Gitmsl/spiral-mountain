@@ -34,10 +34,13 @@ router.delete("/:id", async (req, res)=>{
        try{
             const user = await User.findById(req.params.id);
            try{
-                await Post.deleteMany({username:user.username});
+                await Post.deleteMany({usernameId:user.id});
                 //^set to delete all posts associated with user
-               await User.findByIdAndDelete(req.params.id);
-               res.status(200).json("User successfully deleted");
+                //^^may need to be updated with new usernameId data added to each post as main identifier
+                //^^^updated from {username:user.username} to usernameId:user._id
+                //^^^^This seems to be the current major problem child
+                await User.findByIdAndDelete(req.params.id);
+                res.status(200).json("User successfully deleted");
             } catch(err){
                 res.status(500).json(err);
             }
