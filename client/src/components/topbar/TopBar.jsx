@@ -20,17 +20,18 @@ export default function TopBar() {
 			<p className='usernameText'>{user.username}</p>
 		);
 	};
+
+	const handleReturnHome = () => {
+		window.location.replace('/');
+	};
 	return (
 		<div className="top">
-			<div className="topLeft">
+			<div className="topLogoAndTitle" onClick={handleReturnHome}>
 				<img src={Logo} alt="Spiral Mountain Logo" className="topLogo"/>
 				<p>Spiral-Mountain</p>
 			</div>
 			<div className="topCenter">
 				<ul className="topList">
-					<li className="topListItem">
-						<Link className="link" to="/">HOME</Link>
-					</li>
 					<li className="topListItem">
 						<Link className="link" to="/write">WRITE</Link>
 					</li>
@@ -41,36 +42,33 @@ export default function TopBar() {
 				</ul>
 			</div>
 			<div className="topRight">
-				{
-					user ? (
-						<Link to={'/settings'}>
-							<div className='userNameIconContainer'>
-								{displayUsername()}
-								{/* <p className='usernameIcon'>Username goes here</p> */}
-								<img 
-									className='topImg'
-									src={PUBLICFOLDER + user.profilePic}
-									alt=''
-								/>
-							</div>
-						</Link>
-					) : (
-						<ul className='topList'>
-							<li className='topListItem'>
-								<Link className='link' to="/login">
+				{ user ? (
+					<Link to={'/settings'}>
+						<div className='userNameIconContainer'>
+							{displayUsername()}
+							{/* <p className='usernameIcon'>Username goes here</p> */}
+							<img 
+								className='topImg'
+								src={PUBLICFOLDER + user.profilePic}
+								alt=''
+							/>
+						</div>
+					</Link>
+				) : (
+					<ul className='topList'>
+						<li className='topListItem'>
+							<Link className='link' to="/login">
                 LOGIN
-								</Link>
-							</li>
-							<li className='topListItem'>
-								<Link className='link' to="/register">
+							</Link>
+						</li>
+						<li className='topListItem'>
+							<Link className='link' to="/register">
                 REGISTER
-								</Link>
-							</li>
-						</ul>
-					)
+							</Link>
+						</li>
+					</ul>
+				)
 				}
-				{/* <i className="fa-solid fa-user"></i> */}
-				<i className="searchIcon fa-solid fa-magnifying-glass"></i>
 			</div>
 		</div>
 	);
