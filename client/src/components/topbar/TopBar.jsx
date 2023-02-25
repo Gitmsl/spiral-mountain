@@ -12,6 +12,7 @@ export default function TopBar() {
   
 	const handleLogout = () =>{
 		dispatch({ type:'logout' });
+		window.location.replace('/');
 	};
 
 	const displayUsername = () => {
