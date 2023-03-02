@@ -12,8 +12,9 @@ export default function Home() {
 	useEffect(() => {
 		const fetchPosts = async () => {
 			const res = await axios.get('/posts');
-			setPosts(res.data);
-			console.log(res.data);
+			const sortedPosts = res.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+			setPosts(sortedPosts);
+			console.log(sortedPosts);
 		};
 		fetchPosts();
 	},[]);
