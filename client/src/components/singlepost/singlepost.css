@@ -16,17 +16,23 @@
     align-items: center;
 }
 
+.linkStyle {
+    text-align: center;
+    text-decoration: none;
+    transition: 300ms;
+}
+
+.linkStyle:hover {
+    color:gold;
+}
+
 .postTitle {
     font-family: Lithos Pro;
     font-size: 23px;
-    margin-top: 15px;
-    cursor: pointer;
 }
 
 .hrLine {
     width: 70%;
-    text-align: left;
-    margin-left:0;
 }
 
 
