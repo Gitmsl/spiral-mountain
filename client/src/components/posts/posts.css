@@ -1,6 +1,7 @@
 .posts {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     margin: 30px;
     font-family: CCComicrazy, Arial, Helvetica, sans-serif;
     color: white;
