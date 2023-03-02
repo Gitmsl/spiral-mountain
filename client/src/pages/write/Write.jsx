@@ -43,7 +43,6 @@ export default function Write() {
 			{file && 
 			<img 
 				className="writeImg"
-				// src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
 				src={URL.createObjectURL(file)}
 				alt=""
 			/>
@@ -72,6 +71,7 @@ export default function Write() {
 						type="text"
 						className='writeInput writeText'
 						onChange={(e)=>setDesc(e.target.value)}
+						style={{ whiteSpace: 'pre-wrap' }}
 					></textarea>
 				</div>
 				<button className='writeSubmit' type='submit'>Publish</button>

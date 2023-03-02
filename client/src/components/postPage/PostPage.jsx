@@ -26,22 +26,9 @@ export default function PostPage() {
 			setDesc(res.data.desc);
 			setAuthor(res.data.username);
 			setUsernameId(res.data.usernameId);
-			// if(user._id === res._id){
-			// 	setAuthor(user.username);
-			// }
 		};
 		getPost();
 	}, [path]);
-
-	// const updateAuthor = () => {
-	// 	if(user._id ===  post.usernameId){
-	// 		setAuthor(user.username);
-	// 	}
-	// };
-	// updateAuthor();
-	//^^ attempting to ensure that posts stay updated with updated 
-	// usernames. may be something that needs to be handled in settings
-	//page since that's where name update occurs?
 
 	const handleDelete = async () => {
 		try{
@@ -79,11 +66,19 @@ export default function PostPage() {
 	return (
 		<div className="postPage" >
 			<div className='singlePostWrapper'>
-				<img 
-					src={PUBLICFOLDER + post.photo} 
-					alt='' 
-					className='singlePostImg'
-				/>
+				{ post.photo && (
+					<img 
+						src={PUBLICFOLDER + post.photo} 
+						alt='' 
+						className='singlePostImg'
+					/>
+				) || (
+					<img 
+						src='https://images.unsplash.com/photo-1580912458702-6fa698fc553e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'
+						alt='Default post image' 
+						className='singlePostImg'
+					/>
+				)}
 				{updateMode ? (
 					<input
 						type='text' 
@@ -110,10 +105,11 @@ export default function PostPage() {
 					<textarea 
 						className='singlePostDescInput' 
 						value={desc}
-						onChange={(e)=>setDesc(e.target.value)}	
+						onChange={(e)=>setDesc(e.target.value)}
+						style={{ whiteSpace: 'pre-wrap' }}	
 					/>
 				) : (
-					<p className='singlePostDesc'>
+					<p className='singlePostDesc' style={{ whiteSpace: 'pre-wrap' }}>
 						{desc}
 					</p>
 				)}
