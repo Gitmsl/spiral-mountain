@@ -28,7 +28,7 @@ export default function SinglePost({post}) {
 						<span className="postCat" key={c.name}>{c.name}</span>
 					))}
 				</div>
-				<Link to ={`/post/${post._id}`}>
+				<Link to ={`/post/${post._id}`} className="linkStyle">
 					<span className="postTitle">
 						{post.title}
 					</span>
