@@ -17,7 +17,7 @@ import { Context } from './context/Context';
 
 function App() {
 	const { user } = useContext(Context);
-	// guest account will render user true
+
 	return (
 		<Router>
 			<TopBar />
