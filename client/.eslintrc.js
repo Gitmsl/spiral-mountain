@@ -21,10 +21,7 @@ module.exports = { /*global module */
 			'error',
 			'tab'
 		],
-		'linebreak-style': [
-			'error',
-			'windows'
-		],
+		'linebreak-style':0,
 		'quotes': [
 			'error',
 			'single'
