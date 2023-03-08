@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     background: linear-gradient(
         rgba(255, 255, 255, 0.102), 
         rgba(255, 255, 255, 0.01) 
@@ -23,6 +24,7 @@
 
 .registerForm {
     margin-top: 20px;
+    margin-bottom: 5px;
     display: flex;
     flex-direction: column;
     color: white;
