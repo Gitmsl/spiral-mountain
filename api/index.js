@@ -67,7 +67,10 @@ mongoose.connection.once('open', () => {
     app.use("/api/posts", postRoute);
     app.use("/api/categories", categoryRoute);
 
-    app.listen("5000", () => {
+
+    const port = "443";
+
+    app.listen(port, () => {
         console.log("Backend is running.")
     });
 });
