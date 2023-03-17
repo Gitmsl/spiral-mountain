@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require("express");
 const app = express();
+const port = process.env.PORT || "5000";
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const authRoute = require("./routes/auth");
@@ -67,7 +68,7 @@ mongoose.connection.once('open', () => {
     app.use("/api/posts", postRoute);
     app.use("/api/categories", categoryRoute);
 
-    app.listen(process.env.PORT || "5000", () => {
-        console.log("Backend is running.")
+    app.listen(port, "0.0.0.0", () => {
+        console.log(`Server up and listening on http://0.0.0.0:${port}`)
     });
 });
