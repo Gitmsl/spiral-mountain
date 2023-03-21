@@ -4,7 +4,7 @@ import { React, useEffect, useState } from 'react';
 import axios from 'axios';
 // import setupProxy from "../../setupProxy";
 
-// axios.defaults.baseURL = "http://localhost5000/api/"
+axios.defaults.baseURL = 'https://spiral-mountain-api.onrender.com/api';
 
 export default function Home() {
 	const [posts, setPosts] = useState([]);
