@@ -1,5 +1,5 @@
 
-![Logo](../client/src/images/spiralMountainReadmeLogo.png)
+![Logo](/client/src/images/spiralMountainReadmeLogo.png)
 
 
 # Spiral-Mountain ALPHA BUILD
