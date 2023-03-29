@@ -8,7 +8,7 @@ import { Context } from '../../context/Context';
 
 export default function TopBar() {
 	const { user, dispatch } = useContext(Context);
-	const PUBLICFOLDER = 'http://localhost:5000/images/';
+	const PUBLICFOLDER = 'https://spiral-mountain.com/images' || 'http://localhost:5000/images/';
   
 	const handleLogout = () =>{
 		dispatch({ type:'logout' });

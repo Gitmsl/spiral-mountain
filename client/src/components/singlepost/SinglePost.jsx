@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 
 
 export default function SinglePost({post}) {
-	const PUBLICFOLDER = 'http://localhost:5000/images/';
+	const PUBLICFOLDER = 'https://spiral-mountain.com/images' || 'http://localhost:5000/images/';
 	return (
 		<div className="singlepost">
 			{ post.photo && (
@@ -18,7 +18,7 @@ export default function SinglePost({post}) {
 				<img 
 					className="postImg"
 					src='https://images.unsplash.com/photo-1580912458702-6fa698fc553e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'
-					alt="Placeholder post image: the Playstation 5 home console on a white background"
+					alt="Placeholder post image: Honeycomb pattern"
 				/>
 			)}
 			<div className="postInfo">
