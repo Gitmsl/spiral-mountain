@@ -15,8 +15,7 @@ export default function Write() {
 			username: user.username,
 			title,
 			desc,
-			usernameId: user._id, //NEWLY ADDED: should add the unique user id # to each post 
-			//(also udpated the post model schema to include usernameId)
+			usernameId: user._id,
 		};
 		if (file) {
 			const data = new FormData();

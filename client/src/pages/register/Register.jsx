@@ -18,7 +18,7 @@ export default function Register() {
 				email,
 				password,
 			});
-			res.data && window.location.replace('/login');
+			res.data && window.location.replace('https://www.spiral-mountain.com/login');
 		} catch (err) {
 			setError(true);
 		}

@@ -25,7 +25,7 @@ export default function Login() {
 		} catch (err) {
 			dispatch({type:'login_failure'});
 			setError(true);
-			console.log('uh oh, an error occurred with your login attempt, please try again.');
+			console.log('An error occurred with your login attempt, please try again.');
 		}
 	};
 

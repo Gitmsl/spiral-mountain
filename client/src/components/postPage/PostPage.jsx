@@ -8,7 +8,7 @@ export default function PostPage() {
 	const location = useLocation();
 	const path = location.pathname.split('/')[2];
 	const [post, setPost] = useState({});
-	const PUBLICFOLDER = 'http://localhost:5000/images/';
+	const PUBLICFOLDER = 'https://spiral-mountain.com/images' || 'http://localhost:5000/images/' ;
 	const { user } = useContext(Context);
 	const [title, setTitle] = useState('');
 	const [desc, setDesc] = useState('');

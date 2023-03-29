@@ -9,7 +9,7 @@ export default function Settings() {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [success, setSuccess] = useState(false);
-	const PUBLICFOLDER = 'http://localhost:5000/images/';
+	const PUBLICFOLDER = 'https://www.spiral-mountain.com/images/';
 	
 	const {user, dispatch} = useContext(Context);
 
@@ -58,7 +58,7 @@ export default function Settings() {
 				method: 'DELETE',
 			});
 			dispatch({type:'delete_user_success'});
-			console.log('User successfully deleted!');
+			alert('User successfully deleted!');
 			// window.location.replace('/'); //maybe? or new page for user delete success?
 			// return(
 			// 	<div><h2>Account and all associated posts successfully deleted.</h2></div>
@@ -69,7 +69,6 @@ export default function Settings() {
 		}
 	};
 
-	// console.log('http://localhost:3000/users/' + `${user._id}`);
 	return (
 		<div className='Settings'>
 			<div className='settingsWrapper'>
