@@ -1,0 +1,19 @@
+.footerContainer {
+    width: 100%;
+}
+.footerText {
+    color: white;
+    background-color: rgb(0, 42, 13);
+    text-align: center;
+    padding: 15px;
+    font-family: CCComicrazy, Helvetica, sans-serif;
+    font-size: 12px;
+}
+.footerGithubLink {
+    margin-left: 10px;
+}
+
+.footerGithubLink:hover {
+    color:rgb(140, 140, 140);
+    transition: color  .25s ease-in-out;
+}
