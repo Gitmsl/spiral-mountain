@@ -71,7 +71,7 @@ app.get('/users/new', (req, res) => {
     console.log('User New Form')
 });
 
-mongoose.connection.once('open', () => {
+mongoose.connection.on('open', () => {
     console.log('Connected to MongoDB');
 
     app.use("/api/auth", authRoute);
