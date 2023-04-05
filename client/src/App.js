@@ -5,7 +5,6 @@ import {
 	Route,
 } from 'react-router-dom';
 import TopBar from './components/topbar/TopBar';
-import Footer from './components/footer/Footer';
 import Home from './pages/home/Home';
 import Single from './pages/single/Single';
 import Write from './pages/write/Write';
@@ -31,7 +30,6 @@ function App() {
 				<Route path='/write' element={user ? <Write /> :<Register/>} />
 				<Route path='*' element={<ErrorPage />} />
 			</Routes>
-			<Footer/>
 		</Router>
 	);
 }
