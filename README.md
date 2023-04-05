@@ -6,13 +6,13 @@
 
 Spiral-Mountain is a user-generated videogame news and review site, built with React, Node, Express, and MongoDB.
 
-My inspiration for this site is simple; provide a forum dedicated to user-generated gaming content -- no paychecks or nudges from big game publishers, just normal peoples' genuine takes on the latest game releases. No barriers to entry, no financial motives, just people writing about with their passion as their primary motivator.
+My inspiration for this site is simple; provide a forum dedicated to user-generated gaming content -- no paychecks or nudges from big game publishers, just normal peoples' genuine takes on the latest game releases. No barriers to entry, no financial motives, just people writing with their passion for the medium as their leading motivator.
 
-Given that the site was only recently fully deployed, I'm in the process of sanding down all the rough edges to ensure full functionality. This was my first go at building a fullstack application, so there have been plenty of learning opportunities while getting everything to function! 
+Given that the site was fully deployed just recently, I'm in the process of sanding down all the rough edges to ensure full functionality. This was my first go at building a fullstack application, so there have been plenty of learning opportunities while getting everything to work! 
 
-With that said, until the project reaches the Beta stage (see roadmap below), there will be a lot of "test posts" and nonsense to test functionality. If you'd like, feel free to create an account and test out the site's functionality to your heart's content.
+With that said, until the project reaches the Beta stage (see roadmap below), there will be a lot of "test posts" and nonsense to test functionality. If you'd like, feel free to test out the site for yourself to your heart's content.
 
-I have plans to make major changes to the appearance of the site; a clean mobile site appearance, element sizing and spacing, text-sizing, colors, and hover and click effects are all subject to change. 
+I have plans to make major changes to the appearance of the site; a clean mobile version, element sizing and spacing tweaks, text-sizing, colors, and hover and click effects; everything is subject to change. 
 
 
 ## Roadmap
@@ -39,7 +39,7 @@ I have plans to make major changes to the appearance of the site; a clean mobile
 
 ## Feedback
 
-If you have any feedback you'd like to share with me, or if you're potentially interested in collaborating on this or another project, feel free to reach out to me at michael.s.locascio@gmail.com (Use Spiral-Mountain in the subject line!), or you can find me on LinkedIn (https://www.linkedin.com/in/michael-locascio-1b4803178/) or on twitter @mslcode. Don't worry, I'm pretty friendly!
+If you have any feedback you'd like to share with me, or if you're potentially interested in collaborating on this or another project, feel free to reach out to me at michael.s.locascio@gmail.com (Use Spiral-Mountain in the subject line!), or you can find me on LinkedIn (https://www.linkedin.com/in/michael-locascio-1b4803178/) or on twitter @mslcode. Happy to meet new people in or around the tech space!
 
 
 ## Acknowledgements
