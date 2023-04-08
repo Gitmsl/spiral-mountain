@@ -1,0 +1,8 @@
+# Primary purpose of this file is fixing Netlify 
+# page not found issue during both internal reroutes 
+# and any attempt to follow a link to a post page
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = "302"
