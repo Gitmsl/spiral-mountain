@@ -92,7 +92,7 @@ export default function PostPage() {
 						{post.usernameId === user._id && (
 							<div className='editSinglePost'>
 								<i className="singlePostIcon fa-regular fa-pen-to-square" onClick={()=>setUpdateMode(true)}></i>
-								<i className="singlePostIcon fa-regular fa-trash-can" onClick={handleDelete}></i>
+								<i className="singlePostIcon fa-regular fa-trash-can" onClick={handleDelete()}></i>
 							</div>
 						)}
 					</h1>
