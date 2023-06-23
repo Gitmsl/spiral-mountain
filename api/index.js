@@ -19,7 +19,7 @@ dotenv.config();
 app.use(express.json());
 
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://www.spiral-mountain.com, https://spiral-mountain-api.onrender.com/");
+  res.setHeader("Access-Control-Allow-Origin", "https://www.spiral-mountain.com");
   res.setHeader(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
